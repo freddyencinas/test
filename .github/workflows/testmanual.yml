@@ -2,6 +2,7 @@ name: Pruebas hola mundo
 
 on:
   workflow_dispatch: # Este evento permite la ejecución manual
+    types: [manual-trigger]
 
 jobs:
   test:
