@@ -1,0 +1,23 @@
+name: Pruebas hola mundo
+
+on:
+  workflow_dispatch: # Este evento permite la ejecución manual
+
+jobs:
+  test:
+    runs-on: ubuntu-latest # Selecciona la imagen de SO adecuada
+
+    steps:
+      - name: Checkout del código fuente
+        uses: actions/checkout@v2
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.13.1 # Selecciona la versión de Node.js que necesites
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar pruebas
+        run: npm run test
