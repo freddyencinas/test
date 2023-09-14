@@ -1,8 +1,7 @@
 name: Pruebas hola mundo
 
 on:
-  repository_dispatch: # Este evento permite la ejecución manual
-    types: [manual-trigger]
+  workflow_dispatch: # Este evento permite la ejecución manual
 
 jobs:
   test:
