@@ -1,0 +1,25 @@
+name: Pruebas automatizadas
+
+on:
+  push:
+    branches:
+      - main # Cambia "main" al nombre de tu rama principal
+
+jobs:
+  test:
+    runs-on: ubuntu-latest # Selecciona la imagen de SO adecuada
+
+    steps:
+      - name: Checkout del código fuente
+        uses: actions/checkout@v2
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14 # Selecciona la versión de Node.js que necesites
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar pruebas
+        run: npm test
